@@ -98,6 +98,7 @@ Resources:
           Value: !Sub
             - ${VpcName} Public Subnet (${AZ1})
             - { AZ1: !Select [ 0, !GetAZs  '' ] }
+
   PublicSubnet2:
     Type: AWS::EC2::Subnet
     Properties:
@@ -110,6 +111,7 @@ Resources:
           Value: !Sub
             - ${VpcName} Public Subnet (${AZ2})
             - { AZ2: !Select [ 1, !GetAZs  '' ] }
+
   PrivateSubnet1:
     Type: AWS::EC2::Subnet
     Properties:
@@ -122,6 +124,7 @@ Resources:
           Value: !Sub
             - ${VpcName} Private Subnet (${AZ1})
             - { AZ1: !Select [ 0, !GetAZs  '' ] }
+            
   PrivateSubnet2:
     Type: AWS::EC2::Subnet
     Properties:
