@@ -1,0 +1,46 @@
+ubuntu@ip-10-1-10-159:~$ mysql -h udacity-main.csg58l4glyqc.ap-southeast-1.rds.amazonaws.com -P 3306 -u admin -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 31
+Server version: 8.0.28 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.002 sec)
+
+MySQL [(none)]> USE udacity
+Database changed
+MySQL [udacity]> SHOW TABLES;
+Empty set (0.001 sec)
+
+MySQL [udacity]> CREATE TABLE player (id VARCHAR(20), name VARCHAR(20), age INT);
+Query OK, 0 rows affected (0.071 sec)
+
+MySQL [udacity]> INSERT INTO player VALUES('1', 'Messi', 30);
+Query OK, 1 row affected (0.011 sec)
+
+MySQL [udacity]> INSERT INTO player VALUES('2', 'Ronaldo', 37);
+Query OK, 1 row affected (0.010 sec)
+
+MySQL [udacity]> select * from player;
++------+---------+------+
+| id   | name    | age  |
++------+---------+------+
+| 1    | Messi   |   30 |
+| 2    | Ronaldo |   37 |
++------+---------+------+
+2 rows in set (0.002 sec)
+
+MySQL [udacity]> 
